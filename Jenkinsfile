@@ -1,9 +1,6 @@
 node('docker') {
 
     properties([
-        [$class: 'JiraProjectProperty'], [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], \
-	    throttleJobProperty(categories: [], limitOneJobWithMatchingParams: false, maxConcurrentPerNode: 0, maxConcurrentTotal: 0, \
-				paramsToUseForLimit: '', throttleEnabled: false, throttleOption: 'project'), \
 	    [$class: 'JobLocalConfiguration', changeReasonComment: ''], \
 	    parameters([choice(choices: ['real-kr1', 'real-jp1', 'real-kr2', 'real-gov1'], description: '', name: 'PROFILE'), \
 			choice(choices: ['ENTIRE','APPKEY'], description: '', name: 'APPLY_TARGET'), \
